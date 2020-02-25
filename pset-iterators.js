@@ -64,10 +64,14 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const cNameCountries = countries.filter((country) => {
+  return country.countryName.charAt(0) === "C"}
+)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(cNameCountries)
 console.log('-----------------')
 
 /***********
@@ -84,10 +88,14 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+const allCountryNames = countries.map((country) => {
+  return country.countryName
+})
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(allCountryNames)
 console.log('-----------------')
 
 /***********
@@ -104,10 +112,14 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const smallCountries = countries.filter ((country) => {
+  return parseInt(country.population) < 1000000
+})
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(smallCountries)
 console.log('-----------------')
 
 /***********
@@ -125,10 +137,14 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+const africanCountries = countries.filter((country) => {
+  return country.continentName === "Africa"
+})
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(africanCountries)
 console.log('-----------------')
 
 /***********
@@ -148,10 +164,16 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const englishSpeakingCountries = countries.filter((country) => {
+return country.languages.includes("en")
+  //console.log(languages)
+
+})
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(englishSpeakingCountries)
 console.log('-----------------')
 
 /***********
@@ -171,10 +193,16 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+const countriesWithFourOrMoreLanguages = countries.filter((country) => {
+  let languages = country.languages.split(",");
+  if(languages.length> 4) {
+    return country }
+})
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(countriesWithFourOrMoreLanguages)
 console.log('-----------------')
 
 /***********
@@ -194,8 +222,24 @@ console.log('Problem 7:')
 
 // Add your code below this line
 
+// need:
+// number of south american countries
+
+const southAmericanCountries = countries.filter((country) => {
+  return country.continentName === 'South America'
+})
+
+let count = southAmericanCountries.length
+
+// sum of all populations in south america
+
+const avgPopulationOfSouthAmericanCountries = southAmericanCountries.reduce((sum, country) => {
+  return sum + parseInt(country.population) / count
+},0)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
+console.log(Math.round(avgPopulationOfSouthAmericanCountries))
 console.log('-----------------')
